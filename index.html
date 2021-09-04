@@ -1277,66 +1277,73 @@ else if(a==="YERRANELUGUNTA"){var arr=["","0458-SWATHI-CABLE-NETWORK"]}
               <i class="fas fa-phone-volume"></i>
               <input type="text"id="complaintPhNumber" required maxlength="10" placeholder="Mobile Number:-"/>
             </div>
-            <div class= "input-field2">         
-              <select class="secInp" name="name" id="comp">
-                <option value="AUDIO COMPLAINT">AUDIO COMPLAINT</option>
-                <option value="AUTO UPDATION FAILED LE STBs">AUTO UPDATION FAILED LE STBs</option>
-                <option value="AV COMPLAINT">AV COMPLAINT</option>
-                <option value="BOOTING COMPLAINT">BOOTING COMPLAINT</option>
-                <option value="CARD PROBLEM">CARD PROBLEM</option>
-                <option value="CARD/SERVICE NOT AUTHORIZED /NOT SUBSCRIBED CASES">CARD/SERVICE NOT AUTHORIZED /NOT SUBSCRIBED CASES</option>
-                <option value="CHANNEL JUMPING">CHANNEL JUMPING</option>
-                <option value="CHIP SET COMPLAINT">CHIP SET COMPLAINT</option>
-                <option value="CONTENT PROTECTION">CONTENT PROTECTION</option>
-                <option value="DISPLY COMPALINT">DISPLY COMPALINT</option>
-                <option value="FLASH UPDATE">FLASH UPDATE</option>
-                <option value="FREEZ">FREEZ</option>
-                <option value="FREEZING">FREEZING</option>
-                <option value="INSTALATION FAILED">INSTALATION FAILED</option>
-                <option value="ISSUE RELATED - STB RECORDING">ISSUE RELATED - STB RECORDING</option>
-                <option value="LE STB DEACTIVATED BUT ALL CHANNELS AVAILABLE">LE STB DEACTIVATED BUT ALL CHANNELS AVAILABLE</option>
-                <option value="Mic issue">Mic issue</option>
-                <option value="NEW TV CHANNEL ENQUIRY">NEW TV CHANNEL ENQUIRY</option>
-                <option value="NO AUDIO">NO AUDIO</option>
-                <option value="NO PROGRAM -STB">NO PROGRAM -STB</option>
-                <option value="NO VIDEO">NO VIDEO</option>
-                <option value="OPERATOR NOT GIVING SERVICE PROPERLY">OPERATOR NOT GIVING SERVICE PROPERLY</option>
-                <option value="OSD MESSAGE RELATED ISSUE">OSD MESSAGE RELATED ISSUE</option>
-                <option value="OTA">OTA</option>
-                <option value="PACKAGE ACTIVATION ISSUE">PACKAGE ACTIVATION ISSUE</option>
-                <option value="Power Complaints">Power Complaints</option>
-                <option value="REMOTE COMPLIANT">REMOTE COMPLIANT</option>
-                <option value="REMOTE SENSING ISSUE">REMOTE SENSING ISSUE</option>
-                <option value="REMOTE SENSOR">REMOTE SENSOR</option>
-                <option value="SERVICE NOT TUNED">SERVICE NOT TUNED</option>
-                <option value="SMART CARD NEED REFRESH">SMART CARD NEED REFRESH</option>
-                <option value="SMART CARD NOT INSERTED">SMART CARD NOT INSERTED</option>
-                <option value="SOFTWARE">SOFTWARE</option>
-                <option value="SOME CHANNEL MISSING IN STBS">SOME CHANNEL MISSING IN STBS</option>
-                <option value="SOME CHANNELS NOT GETTIING DISPLAYED">SOME CHANNELS NOT GETTIING DISPLAYED</option>
-                <option value="STB CHANNELS BLANK ISSUE">STB CHANNELS BLANK ISSUE</option>
-                <option value="STB COMPLAINT NOT YET REPAIRED">STB COMPLAINT NOT YET REPAIRED</option>
-                <option value="STB EXCHANGE">STB EXCHANGE</option>
-                <option value="STB Failure">STB Failure</option>
-                <option value="STILLS">STILLS</option>
-                <option value="STOP SERVICE">STOP SERVICE</option>
-                <option value="TUNER">TUNER</option>
-                <option value="TUNING COMPLAINT">TUNING COMPLAINT</option>
-                <option value="VC NUMBER MISSING">VC NUMBER MISSING -CHANGHONG STBs</option>
-                <option value="VIDEO COMPLAINT">VIDEO COMPLAINT</option>
-                <option value="Other">Other</option>
-                
+            <div class= "input-field2">       
+              <select class="secInp" onchange="yesnoCheck(this);">
+                <option>AUDIO COMPLAINT</option>
+                <option>AUTO UPDATION FAILED LE STBs</option>
+                <option>AV COMPLAINT</option>
+                <option>BOOTING COMPLAINT</option>
+                <option>CARD PROBLEM</option>
+                <option>CARD/SERVICE NOT AUTHORIZED /NOT SUBSCRIBED CASES</option>
+                <option>CHANNEL JUMPING</option>
+                <option>CHIP SET COMPLAINT</option>
+                <option>CONTENT PROTECTION</option>
+                <option>DISPLY COMPALINT</option>
+                <option>FLASH UPDATE</option>
+                <option >FREEZ</option>
+                <option >FREEZING</option>
+                <option>INSTALATION FAILED</option>
+                <option>ISSUE RELATED - STB RECORDING</option>
+                <option>LE STB DEACTIVATED BUT ALL CHANNELS AVAILABLE</option>
+                <option>Mic issue</option>
+                <option>NEW TV CHANNEL ENQUIRY</option>
+                <option>NO AUDIO</option>
+                <option>NO PROGRAM -STB</option>
+                <option>NO VIDEO</option>
+                <option>OPERATOR NOT GIVING SERVICE PROPERLY</option>
+                <option>OSD MESSAGE RELATED ISSUE</option>
+                <option>OTA</option>
+                <option>PACKAGE ACTIVATION ISSUE</option>
+                <option>Power Complaints</option>
+                <option>REMOTE COMPLIANT</option>
+                <option>REMOTE SENSING ISSUE</option>
+                <option>REMOTE SENSOR</option>
+                <option>SERVICE NOT TUNED</option>
+                <option>SMART CARD NEED REFRESH</option>
+                <option>SMART CARD NOT INSERTED</option>
+                <option>SOFTWARE</option>
+                <option>SOME CHANNEL MISSING IN STBS</option>
+                <option>SOME CHANNELS NOT GETTIING DISPLAYED</option>
+                <option>STB CHANNELS BLANK ISSUE</option>
+                <option>STB COMPLAINT NOT YET REPAIRED</option>
+                <option>STB EXCHANGE</option>
+                <option>STB Failure</option>
+                <option>STILLS</option>
+                <option>STOP SERVICE</option>
+                <option>TUNER</option>
+                <option>TUNING COMPLAINT</option>
+                <option>VC NUMBER MISSING</option>
+                <option>VIDEO COMPLAINT</option>
+                <option>Other</option>
               </select>
             </div>
             <script>
-              document.getElementById("comp").addEventListener('change', () => {
-                
-              })
+              function yesnoCheck(that) {
+                  if (that.value == "Other") {
+                  alert("Now Write Your Complaint");
+                      document.getElementById("ifYes").style.display = "block";
+                  } else {
+                      document.getElementById("ifYes").style.display = "none";
+                  }
+              }
             </script>
-            <div class="input-field" style="display:none;">
-              <i class="far fa-comments"></i>
-              <input type="text" id="Complaint" required placeholder="Complaint:-"/>
+            <div id="ifYes" style="display: none;">
+              <div class="input-field">
+                <i class="far fa-comments"></i>
+                <input type="text" id="Complaint" required placeholder="Complaint:-"/>
+              </div>
             </div>
+
             <div class="input-field">
               <i class="fas fa-map-marked-alt"></i>
               <input type="text"id="complaintAddress" required placeholder="Address:-"/>
@@ -3310,5 +3317,7 @@ function allFunction(){
 
     </script>
 
+        <script src="app.js"></script>
+    
   </body>
 </html>
