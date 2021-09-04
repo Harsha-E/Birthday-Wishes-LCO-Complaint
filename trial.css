@@ -477,7 +477,7 @@ input-field2 select {
 #comments2{
   overflow: auto; 
   height: 40rem;
-  width:auto;
+  width:22rem;
 }
 
 /* width */
@@ -511,4 +511,12 @@ video{
  position: absolute; 
  top:1em;
  z-index: 10000;
+}
+
+#OperatorName{
+  margin: 1rem;
+  font-size: large;
+  width:min-content;
+  word-wrap: break-word;
+
 }
